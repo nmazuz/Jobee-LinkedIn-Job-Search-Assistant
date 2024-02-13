@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Jobee - Linkedin job search assistant</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+	<div class="overlay" id="overlay"><p>Please loggin in ChatGPT app first <a href="https://chat.openai.com" target="blank">here</a></p></div>
+	<div class="container">
+		<div class="indicator-wrapper">
+			<span class="indicator" id="openai-token-indicator"></span>
+			OpenAI Token
+		</div>
+		<div class="indicator-wrapper">
+			<span class="indicator" id="conversation-id-indicator"></span>
+			Conversation Id
+		</div>
+		<div id="upload-section">
+			<div id="upload-form">
+				<h2>Upload Resume PDF</h2>
+				<label for="pdfInput" class="file-input-label">
+				<span id="uploadText">Choose Resume PDF File</span>
+				<input type="file" id="pdfInput" accept=".pdf">
+				</label>
+			</div>
+			<button id="uploadBtn" class="upload-button disabled" disabled="disabled">Upload</button>
+		</div>
+		<div id="resume-card" style="display:none">
+			<span></span>
+			<button id="removeResume">Remove</button>
+		</div>
+		<div id="message"></div>
+	  </div>
+	  <script src="popup.js"></script>
+</body>
+</html>

@@ -1,0 +1,33 @@
+{
+  "manifest_version": 3,
+  "name": "Jobee - Your LinkedIn Job Search Assistant",
+  "version": "1.0",
+  "description": "Streamline your job search process and leverage ChatGPT (for free) to tailor your resume to different job descriptions, enhancing your chances of receiving interview invitations",
+  "permissions": [
+    "storage",
+    "cookies",
+    "tabs",
+    "activeTab",
+    "webRequest"
+  ],
+  "host_permissions": [
+    "https://*/*"
+  ],
+  "background": {
+    "service_worker":"background.js"
+  },
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "icons/16.png",
+      "48": "icons/48.png",
+      "128": "icons/128.png"
+    }
+  },
+  "content_scripts": [
+    {
+      "matches": ["*://www.linkedin.com/jobs/*"],
+      "js": ["content_script.js"]
+    }
+  ]
+}
